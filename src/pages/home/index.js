@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,useState, useEffect  } from 'react';
 import "./index.scss"
 
 // 子组件
@@ -35,6 +35,27 @@ class Clock extends Component {
     }
 }
 
+
+function Example() {
+    const [count, setCount] = useState(10);
+
+    // 相当于 componentDidMount 和 componentDidUpdate:
+    useEffect(() => {
+        // 使用浏览器的 API 更新页面标题
+        document.title = `You clicked ${count} times`;
+    });
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+}
+
+
 // 父组件
 class Home extends Component {
     constructor(props) {
@@ -54,6 +75,8 @@ class Home extends Component {
         return (
             <div>
                 <Clock />
+
+                <Example/>
                 <button onClick={this.handleClick}>
                     {this.state.isToggleOn ? 'ON' : 'OFF'}1111
                 </button>

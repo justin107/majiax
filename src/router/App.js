@@ -2,8 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 import Home from "../pages/home/index"
+import Welcome from "../pages/welcome/index"
+import Footer from "../components/foot/index"
 
 const routes = [
+    {
+        path: "/",
+        component: Welcome
+    },
     {
         path: "/home",
         component: Home
@@ -27,22 +33,25 @@ function RouteWithSubRoutes(route) {
 function AppRouter() {
     return (
         <Router>
-            <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">index</Link>
-                        </li>
-                        <li>
-                            <Link to="/home">Home</Link>
-                        </li>
-                    </ul>
-                </nav>
+            <div className={"page"}>
+                {/*<nav>*/}
+                {/*    <ul>*/}
+                {/*        <li>*/}
+                {/*            <Link to="/">index</Link>*/}
+                {/*        </li>*/}
+                {/*        <li>*/}
+                {/*            <Link to="/home">Home</Link>*/}
+                {/*        </li>*/}
+                {/*    </ul>*/}
+                {/*</nav>*/}
 
-
+                <main className={"main"}>
                 {routes.map((route, i) => (
                     <RouteWithSubRoutes key={i} {...route} />
                 ))}
+                </main>
+                <Footer />
+
             </div>
         </Router>
     );
