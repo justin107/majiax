@@ -1,11 +1,10 @@
 import React, { Component} from 'react';
-
-import "./index.scss"
+import styles from "./index.module.scss"
 
 class Footer extends Component{
     render(){
         return(
-            <div className={"footer"}>
+            <div className={styles.footer}>
                 <p className={"copyright"}>Copyright &copy;{new Date().getFullYear()} Justin All Rights Reserved</p>
                 <p className={"icp"}>
                     <a href={"http://www.beian.miit.gov.cn"} >鄂ICP备 15001658号-2</a>
