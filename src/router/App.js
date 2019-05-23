@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 import Home from "../pages/home/index"
 import Welcome from "../pages/welcome/index"
-import Footer from "../components/foot/index"
+import Foot from "../components/foot/index"
+
+import { Layout } from 'antd';
+const { Header, Footer, Content } = Layout;
 
 const routes = [
     {
         path: "/",
+        exact: true,
         component: Welcome
     },
     {
@@ -16,43 +20,50 @@ const routes = [
     },
 ];
 
-// wrap <Route> and use this everywhere instead, then when
-// sub routes are added to any route it'll work
-function RouteWithSubRoutes(route) {
-    return (
-        <Route
-            path={route.path}
-            render={props => (
-                // pass the sub-routes down to keep nesting
-                <route.component {...props} routes={route.routes} />
-            )}
-        />
-    );
-}
+
 
 function AppRouter() {
+    const layout={
+        "height": "100%",
+        "backgroundColor": "#282c34"
+    };
+
     return (
         <Router>
-            <div className={"page"}>
-                {/*<nav>*/}
-                {/*    <ul>*/}
-                {/*        <li>*/}
-                {/*            <Link to="/">index</Link>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <Link to="/home">Home</Link>*/}
-                {/*        </li>*/}
-                {/*    </ul>*/}
-                {/*</nav>*/}
+            <Layout style={layout}>
+                {/*<Header>*/}
+                    {/*<nav>*/}
+                    {/*    <ul>*/}
+                    {/*        <li>*/}
+                    {/*            <Link to="/">index</Link>*/}
+                    {/*        </li>*/}
+                    {/*        <li>*/}
+                    {/*            <Link to="/home">Home</Link>*/}
+                    {/*        </li>*/}
+                    {/*    </ul>*/}
+                    {/*</nav>*/}
+                {/*</Header>*/}
+                <Content className={"main"}>
+                    {routes.map((route, index) => (
+                        <Route
+                            key={index}
+                            path={route.path}
+                            exact={route.exact}
+                            component={route.component}
+                        />
+                    ))}
+                </Content>
+                <Footer style={{backgroundColor: "#282c34"}}>
+                    <Foot />
+                </Footer>
+            </Layout>
 
-                <main className={"main"}>
-                {routes.map((route, i) => (
-                    <RouteWithSubRoutes key={i} {...route} />
-                ))}
-                </main>
-                <Footer />
 
-            </div>
+            {/*<div className={"page"}>*/}
+
+
+
+            {/*</div>*/}
         </Router>
     );
 }

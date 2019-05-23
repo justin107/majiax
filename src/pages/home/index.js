@@ -1,6 +1,6 @@
 import React, { Component,useState, useEffect  } from 'react';
-import "./index.scss"
-
+import "./index.module.scss"
+import { Button } from 'antd';
 // 子组件
 class Clock extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class Clock extends Component {
     render() {
         return (
             <div>
-                <h1>`Hello, world!`</h1>
+                <Button type="primary">Button</Button>
                 <h2>It is {this.state.date.getSeconds()}.</h2>
             </div>
         )
@@ -75,7 +75,6 @@ class Home extends Component {
         return (
             <div>
                 <Clock />
-
                 <Example/>
                 <button onClick={this.handleClick}>
                     {this.state.isToggleOn ? 'ON' : 'OFF'}1111

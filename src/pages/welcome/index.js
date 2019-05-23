@@ -1,12 +1,12 @@
 import React, { Component} from 'react';
-import styles from "./index.module.scss"
+import styles from "./index.module.scss";
 
 class Welcome extends Component{
     render(){
-        return(
+        return (
             <div className={styles.welcome}>
-                <p>{("welcome to my world!").toUpperCase()}</p>
-                <span>{("new beginning new journey").toUpperCase()}</span>
+                <div className={styles.h1}>{("welcome to my world!").toUpperCase()}</div>
+                <div className={styles.h2}>{("new beginning new journey").toUpperCase()}</div>
             </div>
         )
     }
