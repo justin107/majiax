@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link,Switch } from "react-router-dom"
 
 import Home from "../pages/home/index"
 import Welcome from "../pages/welcome/index"
@@ -44,6 +44,7 @@ function AppRouter() {
                     {/*</nav>*/}
                 {/*</Header>*/}
                 <Content className={"main"}>
+                    <Switch>
                     {routes.map((route, index) => (
                         <Route
                             key={index}
@@ -52,6 +53,7 @@ function AppRouter() {
                             component={route.component}
                         />
                     ))}
+                    </Switch>
                 </Content>
                 <Footer style={{backgroundColor: "#282c34"}}>
                     <Foot />
