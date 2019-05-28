@@ -1,18 +1,29 @@
-import React from "react";
+import React, {
+    Suspense,
+    lazy
+} from "react";
 import {
     BrowserRouter as Router,
     Route,
-    Link,
+    // Link,
     Switch,
-    Redirect
+    // Redirect
 } from "react-router-dom";
-
-import Home from "../pages/home/index"
-import Welcome from "../pages/welcome/index"
-import Foot from "../components/foot/index"
-
 import { Layout } from 'antd';
-const { Header, Footer, Content } = Layout;
+
+// import Home from "../pages/home/index"
+// import Welcome from "../pages/welcome/index"
+// import Foot from "../components/foot/index"
+
+const Home = lazy(() => import('../pages/home/index'));
+const Welcome = lazy(() => import('../pages/welcome/index'));
+const Foot = lazy(() => import('../components/foot/index'));
+
+
+const {
+    // Header,
+    Footer,
+    Content } = Layout;
 
 const routes = [
     {
@@ -26,8 +37,6 @@ const routes = [
     },
 ];
 
-
-
 function AppRouter() {
     const layout={
         "height": "100%",
@@ -36,18 +45,9 @@ function AppRouter() {
 
     return (
         <Router>
+            <Suspense fallback={<div>Loading...</div>}>
             <Layout style={layout}>
                 {/*<Header>*/}
-                    {/*<nav>*/}
-                    {/*    <ul>*/}
-                    {/*        <li>*/}
-                    {/*            <Link to="/">index</Link>*/}
-                    {/*        </li>*/}
-                    {/*        <li>*/}
-                    {/*            <Link to="/home">Home</Link>*/}
-                    {/*        </li>*/}
-                    {/*    </ul>*/}
-                    {/*</nav>*/}
                 {/*</Header>*/}
                 <Content className={"main"}>
                     <Switch>
@@ -65,13 +65,7 @@ function AppRouter() {
                     <Foot />
                 </Footer>
             </Layout>
-
-
-            {/*<div className={"page"}>*/}
-
-
-
-            {/*</div>*/}
+            </Suspense>
         </Router>
     );
 }
