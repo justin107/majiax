@@ -12,9 +12,15 @@ class Footer extends Component{
         }
     }
 
+    componentDidUpdate() {
+
+    }
+
     componentDidMount(){
 
     }
+
+
 
     render(){
         return(
