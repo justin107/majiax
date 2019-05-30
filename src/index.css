@@ -1,8 +1,9 @@
 html,
 body,
 #root {
-  background: #282c34;
+  /*background: #282c34;*/
   height: 100%;
+  user-select: none;
 }
 
 .main {display:flex;justify-content: center;align-items: center;}

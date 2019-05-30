@@ -40,7 +40,8 @@ const routes = [
 function AppRouter() {
     const layout={
         "height": "100%",
-        "backgroundColor": "#282c34"
+        // "backgroundColor": "#121a2e"
+        "backgroundColor": "#000"
     };
 
     return (
@@ -61,7 +62,7 @@ function AppRouter() {
                     ))}
                     </Switch>
                 </Content>
-                <Footer style={{backgroundColor: "#282c34"}}>
+                <Footer style={{backgroundColor: "#000"}}>
                     <Foot />
                 </Footer>
             </Layout>

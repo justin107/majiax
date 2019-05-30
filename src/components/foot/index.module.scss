@@ -3,13 +3,10 @@
 }
 
 .footer {flex:0;text-align: center;color: #fff;
-
   :global(.footLink) {margin-bottom: 10px;
-    :global(.ico) {display: inline-block;vertical-align: middle;width:24px;height: 24px;cursor: pointer;opacity: .8;
+    :global(.ico) {display: inline-block;vertical-align: middle;width:24px;height: 24px;cursor: pointer;opacity: .8;margin: 0 10px;
       &:hover {opacity: 1;}
     }
-    .ico-github {}
-    img {width:24px;height: auto;display: inline-block;vertical-align: middle;}
   }
 
   :global(.ghs) {
