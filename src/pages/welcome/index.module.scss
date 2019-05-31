@@ -1,5 +1,44 @@
 .welcome {color: #fff;text-align: center;
-  img {display: block;width:168px;height:auto;margin: 0 auto 20px;opacity:1;}
-  .h1 {font-size:42px;display: inline-block;background-color:rgba(8,101,214,1);padding:5px 20px;margin: 10px;}
-  .h2 {font-size: 22px;color: rgba(255,255,255,.6);display: block;}
+  //img {display: block;width:168px;height:auto;margin: 0 auto 20px;opacity:1;}
+  //.apple {
+  //  background-image: url("../../assets/images/covers-apple-outline.jpg");background-repeat: no-repeat;display: block;width: 168px;height: 204px;background-size: 168px 204px;display: none;
+  //}
+  .h1 {font-size:48px;display: inline-block;
+    filter: brightness(110%);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #E91E63, 0 0 35px #E91E63, 0 0 40px #E91E63, 0 0 50px #E91E63, 0 0 75px #E91E63;
+    animation: pink 1.5s ease-in-out infinite alternate;
+    //background-color:rgba(8,101,214,1);padding:5px 20px;
+    margin: 10px 0 0 0;}
+  .h2 {font-size: 20px;color: rgba(255,255,255,.6);display: block;position: relative;
+  }
+
+
+  .mix3d {
+    margin: 30px auto 0;
+    display: block;
+    width: 178px;
+    height: 204px;
+    z-index: 2;
+    background: url('../../assets/images/covers-apple-outline.jpg'), cyan;
+    background-blend-mode: lighten;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 168px 204px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 178px;
+      height: 204px;
+      z-index: 3;
+      background: url('../../assets/images/covers-apple-outline.jpg'), red;
+      background-blend-mode: lighten;
+      //margin-left: 10px;
+      background-position: 10px;
+      background-repeat: no-repeat;
+      background-size:168px 204px;
+      mix-blend-mode: darken;
+    }
+  }
 }

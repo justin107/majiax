@@ -9,10 +9,9 @@ class Welcome extends Component{
     render(){
         return (
             <div className={styles.welcome}>
-                <img alt="apple" src="assets/covers-apple-outline.jpg" />
-
+                <div className={styles.mix3d}></div>
                 <div className={styles.h1}>
-                    {(" justin's world!").toUpperCase()}
+                    {"Justin's World!"}
                 </div>
                 <div className={styles.h2}>
                     {("new beginning new journey").toUpperCase()}
