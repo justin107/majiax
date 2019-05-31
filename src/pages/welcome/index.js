@@ -11,7 +11,7 @@ class Welcome extends Component{
             <div className={styles.welcome}>
                 <div className={styles.mix3d}></div>
                 <div className={styles.h1}>
-                    {"Justin's World!"}
+                    {("hello world").toUpperCase()}
                 </div>
                 <div className={styles.h2}>
                     {("new beginning new journey").toUpperCase()}

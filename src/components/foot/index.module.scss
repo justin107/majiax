@@ -2,7 +2,7 @@
 
 }
 
-.footer {flex:0;text-align: center;color: #fff;
+.footer {flex:0;text-align: center;color: #fff;opacity: .5;
   :global(.footLink) {margin-bottom: 10px;
     :global(.ico) {display: inline-block;vertical-align: middle;width:24px;height: 24px;cursor: pointer;opacity: .8;margin: 0 10px;
       &:hover {opacity: 1;}
